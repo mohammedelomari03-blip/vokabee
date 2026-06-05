@@ -61,7 +61,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // ─── Back Button ─────────────────────────────────
+                // ─── Back Button ──────────────────────────────────
                 IconButton(
                   onPressed: () => context.go('/login'),
                   icon: const Icon(
@@ -72,7 +72,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
                 const SizedBox(height: AppSpacing.xl),
 
-                // ─── Logo ────────────────────────────────────────
+                // ─── Logo ─────────────────────────────────────────
                 Center(
                   child: Container(
                     width: 72,
@@ -94,10 +94,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
                 const SizedBox(height: AppSpacing.xl),
 
-                // ─── Title ───────────────────────────────────────
+                // ─── Title ────────────────────────────────────────
                 Center(
                   child: Text(
-                    'Create Account',
+                    'إنشاء حساب جديد 👑',
                     style: AppTypography.headlineMedium.copyWith(
                       color: AppColors.pureWhite,
                     ),
@@ -108,7 +108,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
                 Center(
                   child: Text(
-                    'Start your royal learning journey',
+                    'ابدأ رحلتك الملكية في تعلم الألمانية',
                     style: AppTypography.bodyMedium.copyWith(
                       color: AppColors.silverMist,
                     ),
@@ -117,9 +117,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
                 const SizedBox(height: AppSpacing.xxxl),
 
-                // ─── Name ────────────────────────────────────────
+                // ─── Name ─────────────────────────────────────────
                 Text(
-                  'Full Name',
+                  'الاسم الكامل',
                   style: AppTypography.labelMedium.copyWith(
                     color: AppColors.pureWhite,
                   ),
@@ -131,7 +131,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     color: AppColors.pureWhite,
                   ),
                   decoration: const InputDecoration(
-                    hintText: 'Your full name',
+                    hintText: 'اسمك الكامل',
                     prefixIcon: Icon(
                       Icons.person_outline,
                       color: AppColors.silverMist,
@@ -141,9 +141,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
                 const SizedBox(height: AppSpacing.lg),
 
-                // ─── Email ───────────────────────────────────────
+                // ─── Email ────────────────────────────────────────
                 Text(
-                  'Email',
+                  'البريد الإلكتروني',
                   style: AppTypography.labelMedium.copyWith(
                     color: AppColors.pureWhite,
                   ),
@@ -166,9 +166,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
                 const SizedBox(height: AppSpacing.lg),
 
-                // ─── Password ────────────────────────────────────
+                // ─── Password ─────────────────────────────────────
                 Text(
-                  'Password',
+                  'كلمة المرور',
                   style: AppTypography.labelMedium.copyWith(
                     color: AppColors.pureWhite,
                   ),
@@ -202,9 +202,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
                 const SizedBox(height: AppSpacing.lg),
 
-                // ─── Confirm Password ────────────────────────────
+                // ─── Confirm Password ─────────────────────────────
                 Text(
-                  'Confirm Password',
+                  'تأكيد كلمة المرور',
                   style: AppTypography.labelMedium.copyWith(
                     color: AppColors.pureWhite,
                   ),
@@ -238,16 +238,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
                 const SizedBox(height: AppSpacing.xxl),
 
-                // ─── Register Button ─────────────────────────────
+                // ─── Register Button ──────────────────────────────
                 RoyalButton(
-                  label: 'Create Account',
+                  label: 'إنشاء الحساب',
                   isLoading: _isLoading,
                   onPressed: _register,
                 ),
 
                 const SizedBox(height: AppSpacing.xl),
 
-                // ─── Divider ─────────────────────────────────────
+                // ─── Divider ──────────────────────────────────────
                 Row(
                   children: [
                     Expanded(
@@ -260,7 +260,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         horizontal: AppSpacing.md,
                       ),
                       child: Text(
-                        'or',
+                        'أو',
                         style: AppTypography.bodySmall.copyWith(
                           color: AppColors.silverMist,
                         ),
@@ -276,9 +276,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
                 const SizedBox(height: AppSpacing.xl),
 
-                // ─── Google Button ───────────────────────────────
+                // ─── Google Button ────────────────────────────────
                 RoyalButton(
-                  label: 'Continue with Google',
+                  label: 'المتابعة بـ Google',
                   type: RoyalButtonType.secondary,
                   icon: Icons.g_mobiledata,
                   onPressed: () {},
@@ -286,19 +286,19 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
                 const SizedBox(height: AppSpacing.xxxl),
 
-                // ─── Login Link ──────────────────────────────────
+                // ─── Login Link ───────────────────────────────────
                 Center(
                   child: TextButton(
                     onPressed: () => context.go('/login'),
                     child: RichText(
                       text: TextSpan(
-                        text: 'Already have an account? ',
+                        text: 'لديك حساب بالفعل؟ ',
                         style: AppTypography.bodySmall.copyWith(
                           color: AppColors.silverMist,
                         ),
                         children: [
                           TextSpan(
-                            text: 'Log In',
+                            text: 'تسجيل الدخول',
                             style: AppTypography.labelSmall.copyWith(
                               color: AppColors.imperialGold,
                             ),
