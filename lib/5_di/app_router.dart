@@ -22,7 +22,7 @@ class _PlaceholderScreen extends StatelessWidget {
           style: const TextStyle(
             color: Color(0xFFF5F5FF),
             fontSize: 24,
-            fontFamily: 'Nunito',
+            fontFamily: 'Inter',
             fontWeight: FontWeight.w700,
           ),
         ),
