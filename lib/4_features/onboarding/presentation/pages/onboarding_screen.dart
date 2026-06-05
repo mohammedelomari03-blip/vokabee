@@ -99,7 +99,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                     child: TextButton(
                       onPressed: () => context.go('/login'),
                       child: Text(
-                        'تخطى',
+                        'تجاوز',
                         style: AppTypography.labelMedium.copyWith(
                           color: AppColors.silverMist,
                         ),
@@ -152,7 +152,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                 TextButton(
                   onPressed: () => context.go('/login'),
                   child: Text(
-                    'عندك حساب بالفعل؟ سجل دخول',
+                    'لديك حساب بالفعل؟ تسجيل الدخول',
                     style: AppTypography.bodySmall.copyWith(
                       color: AppColors.silverMist,
                     ),
