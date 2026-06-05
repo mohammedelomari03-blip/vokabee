@@ -78,7 +78,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
     if (!mounted) return;
     _textController.forward();
 
-    await Future.delayed(AppAnimations.celebration);
+    await Future.delayed(const Duration(milliseconds: 1500));
     if (!mounted) return;
     context.go('/onboarding');
   }
@@ -165,7 +165,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
                         ),
                         const SizedBox(height: 8),
                         Text(
-                          'Learn. Level Up. Conquer.',
+                          'حكم اللغة',
                           style: AppTypography.bodyMedium.copyWith(
                             color: AppColors.silverMist,
                             letterSpacing: 1.5,

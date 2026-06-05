@@ -24,21 +24,21 @@ class _OnboardingScreenState extends State<OnboardingScreen>
 
   final List<_OnboardingPage> _pages = const [
     _OnboardingPage(
-      emoji: '🌍',
-      title: 'Learn Any Language',
-      subtitle: 'Master new languages with fun, bite-sized lessons designed for real progress.',
+      emoji: '🐝',
+      title: 'حكم اللغة الألمانية',
+      subtitle: 'النحلة تجمع وتبني ولا تتوقف أبداً.\nأنت هنا لأنك مثلها.',
       color: AppColors.imperialGold,
     ),
     _OnboardingPage(
       emoji: '👑',
-      title: 'Level Up Daily',
-      subtitle: 'Earn XP, climb leaderboards, and unlock achievements as you grow.',
+      title: 'ارتقِ في الرتب الملكية',
+      subtitle: 'من Noble إلى Emperor —\nكل كلمة تتعلمها تقربك من العرش.',
       color: AppColors.royalPurple,
     ),
     _OnboardingPage(
       emoji: '🔥',
-      title: 'Build Your Streak',
-      subtitle: 'Stay consistent with daily challenges and keep your streak alive.',
+      title: 'ابنِ إمبراطوريتك',
+      subtitle: 'تحديات يومية، ذكاء اصطناعي شخصي،\nومجتمع ملكي ينتظرك.',
       color: AppColors.softGold,
     ),
   ];
@@ -91,7 +91,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
             opacity: _fadeAnimation,
             child: Column(
               children: [
-                // ─── Skip Button ─────────────────────────────────────
+                // ─── Skip Button ──────────────────────────────────
                 Align(
                   alignment: Alignment.topRight,
                   child: Padding(
@@ -99,7 +99,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                     child: TextButton(
                       onPressed: () => context.go('/login'),
                       child: Text(
-                        'Skip',
+                        'تخطى',
                         style: AppTypography.labelMedium.copyWith(
                           color: AppColors.silverMist,
                         ),
@@ -108,7 +108,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                   ),
                 ),
 
-                // ─── Pages ───────────────────────────────────────────
+                // ─── Pages ───────────────────────────────────────
                 Expanded(
                   child: PageView.builder(
                     controller: _pageController,
@@ -122,7 +122,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                   ),
                 ),
 
-                // ─── Dots ────────────────────────────────────────────
+                // ─── Dots ─────────────────────────────────────────
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: List.generate(
@@ -133,26 +133,26 @@ class _OnboardingScreenState extends State<OnboardingScreen>
 
                 const SizedBox(height: AppSpacing.xl),
 
-                // ─── Button ──────────────────────────────────────────
+                // ─── Button ───────────────────────────────────────
                 Padding(
                   padding: const EdgeInsets.symmetric(
                     horizontal: AppSpacing.screenH,
                   ),
                   child: RoyalButton(
                     label: _currentPage == _pages.length - 1
-                        ? 'Get Started'
-                        : 'Next',
+                        ? 'ابدأ رحلتك 👑'
+                        : 'التالي',
                     onPressed: _nextPage,
                   ),
                 ),
 
                 const SizedBox(height: AppSpacing.xl),
 
-                // ─── Login Link ──────────────────────────────────────
+                // ─── Login Link ───────────────────────────────────
                 TextButton(
                   onPressed: () => context.go('/login'),
                   child: Text(
-                    'Already have an account? Log in',
+                    'عندك حساب بالفعل؟ سجل دخول',
                     style: AppTypography.bodySmall.copyWith(
                       color: AppColors.silverMist,
                     ),
@@ -174,7 +174,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          // Emoji
+          // ─── Icon Circle ──────────────────────────────────────
           Container(
             width: 140,
             height: 140,
@@ -196,7 +196,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
 
           const SizedBox(height: AppSpacing.xxl),
 
-          // Title
+          // ─── Title ────────────────────────────────────────────
           Text(
             page.title,
             textAlign: TextAlign.center,
@@ -207,13 +207,13 @@ class _OnboardingScreenState extends State<OnboardingScreen>
 
           const SizedBox(height: AppSpacing.lg),
 
-          // Subtitle
+          // ─── Subtitle ─────────────────────────────────────────
           Text(
             page.subtitle,
             textAlign: TextAlign.center,
             style: AppTypography.bodyMedium.copyWith(
               color: AppColors.silverMist,
-              height: 1.6,
+              height: 1.8,
             ),
           ),
         ],
@@ -229,7 +229,9 @@ class _OnboardingScreenState extends State<OnboardingScreen>
       width: isActive ? 24 : 8,
       height: 8,
       decoration: BoxDecoration(
-        color: isActive ? AppColors.imperialGold : AppColors.silverMist.withValues(alpha: 0.4),
+        color: isActive
+            ? AppColors.imperialGold
+            : AppColors.silverMist.withValues(alpha: 0.4),
         borderRadius: BorderRadius.circular(AppSpacing.radiusFull),
       ),
     );
