@@ -56,7 +56,7 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // ─── Back Button ─────────────────────────────────────
+                // ─── Back Button ──────────────────────────────────
                 IconButton(
                   onPressed: () => context.go('/onboarding'),
                   icon: const Icon(
@@ -67,7 +67,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
                 const SizedBox(height: AppSpacing.xl),
 
-                // ─── Logo ────────────────────────────────────────────
+                // ─── Logo ─────────────────────────────────────────
                 Center(
                   child: Container(
                     width: 72,
@@ -89,10 +89,10 @@ class _LoginScreenState extends State<LoginScreen> {
 
                 const SizedBox(height: AppSpacing.xl),
 
-                // ─── Title ───────────────────────────────────────────
+                // ─── Title ────────────────────────────────────────
                 Center(
                   child: Text(
-                    'Welcome Back',
+                    'مرحباً بعودتك 👑',
                     style: AppTypography.headlineMedium.copyWith(
                       color: AppColors.pureWhite,
                     ),
@@ -103,7 +103,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
                 Center(
                   child: Text(
-                    'Continue your learning journey',
+                    'واصل رحلتك الملكية',
                     style: AppTypography.bodyMedium.copyWith(
                       color: AppColors.silverMist,
                     ),
@@ -112,9 +112,9 @@ class _LoginScreenState extends State<LoginScreen> {
 
                 const SizedBox(height: AppSpacing.xxxl),
 
-                // ─── Email ───────────────────────────────────────────
+                // ─── Email ────────────────────────────────────────
                 Text(
-                  'Email',
+                  'البريد الإلكتروني',
                   style: AppTypography.labelMedium.copyWith(
                     color: AppColors.pureWhite,
                   ),
@@ -126,9 +126,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   style: AppTypography.bodyMedium.copyWith(
                     color: AppColors.pureWhite,
                   ),
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     hintText: 'your@email.com',
-                    prefixIcon: const Icon(
+                    prefixIcon: Icon(
                       Icons.email_outlined,
                       color: AppColors.silverMist,
                     ),
@@ -137,9 +137,9 @@ class _LoginScreenState extends State<LoginScreen> {
 
                 const SizedBox(height: AppSpacing.lg),
 
-                // ─── Password ────────────────────────────────────────
+                // ─── Password ─────────────────────────────────────
                 Text(
-                  'Password',
+                  'كلمة المرور',
                   style: AppTypography.labelMedium.copyWith(
                     color: AppColors.pureWhite,
                   ),
@@ -173,13 +173,13 @@ class _LoginScreenState extends State<LoginScreen> {
 
                 const SizedBox(height: AppSpacing.sm),
 
-                // ─── Forgot Password ─────────────────────────────────
+                // ─── Forgot Password ──────────────────────────────
                 Align(
                   alignment: Alignment.centerRight,
                   child: TextButton(
                     onPressed: () {},
                     child: Text(
-                      'Forgot Password?',
+                      'نسيت كلمة المرور؟',
                       style: AppTypography.labelSmall.copyWith(
                         color: AppColors.imperialGold,
                       ),
@@ -189,16 +189,16 @@ class _LoginScreenState extends State<LoginScreen> {
 
                 const SizedBox(height: AppSpacing.xl),
 
-                // ─── Login Button ────────────────────────────────────
+                // ─── Login Button ─────────────────────────────────
                 RoyalButton(
-                  label: 'Log In',
+                  label: 'تسجيل الدخول',
                   isLoading: _isLoading,
                   onPressed: _login,
                 ),
 
                 const SizedBox(height: AppSpacing.xl),
 
-                // ─── Divider ─────────────────────────────────────────
+                // ─── Divider ──────────────────────────────────────
                 Row(
                   children: [
                     Expanded(
@@ -211,7 +211,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         horizontal: AppSpacing.md,
                       ),
                       child: Text(
-                        'or',
+                        'أو',
                         style: AppTypography.bodySmall.copyWith(
                           color: AppColors.silverMist,
                         ),
@@ -227,9 +227,9 @@ class _LoginScreenState extends State<LoginScreen> {
 
                 const SizedBox(height: AppSpacing.xl),
 
-                // ─── Google Button ───────────────────────────────────
+                // ─── Google Button ────────────────────────────────
                 RoyalButton(
-                  label: 'Continue with Google',
+                  label: 'المتابعة بـ Google',
                   type: RoyalButtonType.secondary,
                   icon: Icons.g_mobiledata,
                   onPressed: () {},
@@ -237,19 +237,19 @@ class _LoginScreenState extends State<LoginScreen> {
 
                 const SizedBox(height: AppSpacing.xxxl),
 
-                // ─── Register Link ───────────────────────────────────
+                // ─── Register Link ────────────────────────────────
                 Center(
                   child: TextButton(
                     onPressed: () => context.go('/register'),
                     child: RichText(
                       text: TextSpan(
-                        text: "Don't have an account? ",
+                        text: 'ليس لديك حساب؟ ',
                         style: AppTypography.bodySmall.copyWith(
                           color: AppColors.silverMist,
                         ),
                         children: [
                           TextSpan(
-                            text: 'Sign Up',
+                            text: 'سجل الآن',
                             style: AppTypography.labelSmall.copyWith(
                               color: AppColors.imperialGold,
                             ),
