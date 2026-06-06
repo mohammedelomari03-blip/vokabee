@@ -6,6 +6,7 @@ import '../../../../0_core/1_constants/design_system/typography.dart';
 import '../../../../0_core/1_constants/design_system/spacing.dart';
 import '../../../../0_core/1_constants/design_system/animations.dart';
 import '../../../../3_presentation/3_widgets/royal/royal_button.dart';
+import '../widgets/onboarding_illustrations.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -22,25 +23,25 @@ class _OnboardingScreenState extends State<OnboardingScreen>
   late AnimationController _fadeController;
   late Animation<double> _fadeAnimation;
 
-  final List<_OnboardingPage> _pages = const [
-    _OnboardingPage(
-      emoji: '🐝',
+  final List<_OnboardingData> _pages = const [
+    _OnboardingData(
       title: 'حكم اللغة الألمانية',
       subtitle: 'النحلة تجمع وتبني ولا تتوقف أبداً.\nأنت هنا لأنك مثلها.',
-      color: AppColors.imperialGold,
     ),
-    _OnboardingPage(
-      emoji: '👑',
+    _OnboardingData(
       title: 'ارتقِ في الرتب الملكية',
       subtitle: 'من Noble إلى Emperor —\nكل كلمة تتعلمها تقربك من العرش.',
-      color: AppColors.royalPurple,
     ),
-    _OnboardingPage(
-      emoji: '🔥',
+    _OnboardingData(
       title: 'ابنِ إمبراطوريتك',
       subtitle: 'تحديات يومية، ذكاء اصطناعي شخصي،\nومجتمع ملكي ينتظرك.',
-      color: AppColors.softGold,
     ),
+  ];
+
+  final List<Widget> _illustrations = const [
+    OnboardingLogoIllustration(),
+    OnboardingCrownIllustration(),
+    OnboardingFlameIllustration(),
   ];
 
   @override
@@ -117,7 +118,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                     },
                     itemCount: _pages.length,
                     itemBuilder: (context, index) {
-                      return _buildPage(_pages[index]);
+                      return _buildPage(_pages[index], _illustrations[index]);
                     },
                   ),
                 ),
@@ -168,48 +169,24 @@ class _OnboardingScreenState extends State<OnboardingScreen>
     );
   }
 
-  Widget _buildPage(_OnboardingPage page) {
+  Widget _buildPage(_OnboardingData data, Widget illustration) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: AppSpacing.screenH),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          // ─── Icon Circle ──────────────────────────────────────
-          Container(
-            width: 140,
-            height: 140,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: page.color.withValues(alpha: 0.15),
-              border: Border.all(
-                color: page.color.withValues(alpha: 0.3),
-                width: 2,
-              ),
-            ),
-            child: Center(
-              child: Text(
-                page.emoji,
-                style: const TextStyle(fontSize: 64),
-              ),
-            ),
-          ),
-
+          illustration,
           const SizedBox(height: AppSpacing.xxl),
-
-          // ─── Title ────────────────────────────────────────────
           Text(
-            page.title,
+            data.title,
             textAlign: TextAlign.center,
             style: AppTypography.headlineMedium.copyWith(
               color: AppColors.pureWhite,
             ),
           ),
-
           const SizedBox(height: AppSpacing.lg),
-
-          // ─── Subtitle ─────────────────────────────────────────
           Text(
-            page.subtitle,
+            data.subtitle,
             textAlign: TextAlign.center,
             style: AppTypography.bodyMedium.copyWith(
               color: AppColors.silverMist,
@@ -238,16 +215,12 @@ class _OnboardingScreenState extends State<OnboardingScreen>
   }
 }
 
-class _OnboardingPage {
-  final String emoji;
+class _OnboardingData {
   final String title;
   final String subtitle;
-  final Color color;
 
-  const _OnboardingPage({
-    required this.emoji,
+  const _OnboardingData({
     required this.title,
     required this.subtitle,
-    required this.color,
   });
 }
